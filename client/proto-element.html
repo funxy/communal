@@ -1,0 +1,13 @@
+<link rel="import" href="./bower_components/polymer/polymer.html">
+
+<script>
+    // proto-element エレメントを登録
+    Polymer({
+        is: "proto-element",
+        // エレメントのプロトタイプにコールバックを追加
+        ready: function() {
+            this.textContent = "I'm a proto-element. Check out my prototype!"
+        }
+    });
+</script>
+
