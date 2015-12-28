@@ -1,0 +1,28 @@
+{
+  "name": "communal_libs",
+  "authors": [
+    "funxy"
+  ],
+  "description": "librarys for communal",
+  "main": "index.js",
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "keywords": [
+    "communal"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0"
+  }
+}

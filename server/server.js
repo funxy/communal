@@ -1,11 +1,6 @@
 const SERVER = require('http').createServer();
 const FS = require('fs');
 
-// ポート番号
-const PORT = 3000;
-// ローカルホスト
-const LOCAL_HOST = '127.0.0.1';
-
 // ファイルの表示
 function fileOpen(path, res) {
     console.log(path);
@@ -21,19 +16,21 @@ function fileOpen(path, res) {
     });
 }
 
-SERVER.on('request', function(req, res) {
-    // URL に対応したファイルを開く
-    switch(req.url) {
-        case '/':
-            fileOpen('./client/index.html', res);
-            break;
-        case '/test':
-            fileOpen('./client/test.html', res);
-            break;
-        default:
-            break;
-    }
-});
-SERVER.listen(PORT, LOCAL_HOST);
-console.log("server listening ...");
+exports.OnStart = function(port, host) {
+    SERVER.on('request', function(req, res) {
+        // URL に対応したファイルを開く
+        switch(req.url) {
+            case '/':
+                fileOpen('./client/index.html', res);
+                break;
+            case '/test':
+                fileOpen('./client/test.html', res);
+                break;
+            default:
+                break;
+        }
+    });
+    SERVER.listen(port, host);
+    console.log("server listening ...");
+}
 
